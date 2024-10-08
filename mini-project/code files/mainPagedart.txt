@@ -1,0 +1,103 @@
+import 'package:flutter/material.dart';
+
+class MainContent extends StatelessWidget {
+  const MainContent({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Stack(
+                children: [
+                  // Use a CustomClipper to create the desired shape
+                  ClipPath(
+                    // clipper: CustomShapeClipper(), // Use the custom clipper
+                    child: Image.asset(
+                      'assets/woman-3116587_1280.jpg', // Replace with your asset image
+                      fit: BoxFit.cover,
+                      height: 500, // Set a fixed height for the image
+                      width: double.infinity,
+                    ),
+                  ),
+                  Positioned(
+                    top: 350,
+                    left: 20,
+                    right: 20,
+                    child: Column(
+                      children: [
+                        Text(
+                          'SEASON SALE',
+                          style: TextStyle(
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontFamily: 'Playfair_Display'
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        Text(
+                          'up to 60% Off',
+                          style: TextStyle(
+                            fontSize: 24,
+                            color: Colors.white,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Your button press action
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+              ),
+              child: Text(
+                'Shop Now',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.asset(
+                  'assets/hero3.webp', // Replace with your asset image
+                  fit: BoxFit.cover,
+                  height: 100,
+                  width: 1000,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+
+    );
+  }
+}
+

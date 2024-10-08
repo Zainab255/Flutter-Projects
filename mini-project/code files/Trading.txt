@@ -1,0 +1,65 @@
+import 'package:flutter/material.dart';
+
+class Trading extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('TRENDING NOW'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                TextButton(onPressed: () {}, child: Text('All')),
+                TextButton(onPressed: () {}, child: Text('Dresses')),
+                TextButton(onPressed: () {}, child: Text('Accessories')),
+                TextButton(onPressed: () {}, child: Text('Shoes')),
+              ],
+            ),
+            SizedBox(height: 16),
+            Expanded(
+              child: GridView.builder(
+                itemCount: 4, // Total items = 4 rows * 1 column
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 1, // Number of columns
+                  crossAxisSpacing: 4.0, // Space between columns
+                  mainAxisSpacing: 4.0, // Space between rows
+                ),
+                itemBuilder: (BuildContext context, int index) {
+                  return Card(
+                    margin: EdgeInsets.all(4.0),
+                    child: InkWell(
+                      onTap: () {
+                        // Handle tap action here
+                      },
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset('assets/woman-3116587_1280.jpg', fit: BoxFit.cover, width: double.infinity),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Static Item Name'), // Static item name
+                                Text('\$657'), // Static price
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

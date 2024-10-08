@@ -1,0 +1,72 @@
+import 'package:flutter/material.dart';
+
+class ImageFile extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+
+        body: MyImages(),
+      ),
+    );
+  }
+}
+
+class MyImages extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: <Widget>[
+        Image.asset('assets/make.jpeg', height: 300, width: 400),
+        Padding(
+          padding: const EdgeInsets.only(top: 10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Text('OutWears'),
+              SizedBox(height: 10),
+              Text('This is outstanding make-up', style: TextStyle(fontSize: 10)),
+            ],
+          ),
+        ),
+        Image.asset('assets/make1.webp', height: 300, width: 400),
+        Padding(
+          padding: const EdgeInsets.only(top: 10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Text('OutWears'),
+              SizedBox(height: 10),
+              Text('This is outstanding make-up', style: TextStyle(fontSize: 10)),
+            ],
+          ),
+        ),
+        Image.asset('assets/make2.webp', height: 300, width: 500),
+        Padding(
+          padding: const EdgeInsets.only(top: 10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Text('OutWears'),
+              SizedBox(height: 10),
+              Text('This is Outstanding make-up', style: TextStyle(fontSize: 10)),
+            ],
+          ),
+        ),
+        Image.asset('assets/make3.jpg', height: 300, width: 500),
+        Padding(
+          padding: const EdgeInsets.only(top: 10.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Text('OutWears'),
+              SizedBox(height: 10),
+              Text('This is Outstanding make-up', style: TextStyle(fontSize: 10)),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}

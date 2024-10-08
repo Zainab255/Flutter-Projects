@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+import 'Header.dart';
+import 'Footer.dart';
+import 'mainpage.dart';
+import 'Trading.dart';
+import 'Recommended.dart';
+
+class Mainscreen extends StatelessWidget {
+  const Mainscreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+          Header(),
+          Expanded(child: MainContent(),),
+          // Trading(),
+          Footer(),
+          // You can add more widgets below if needed
+        ],
+      ),
+    );
+  }
+}
